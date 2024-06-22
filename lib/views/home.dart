@@ -40,6 +40,7 @@ class _HomeState extends State<Home> {
                     } else {
                       return Container(
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             PieChart(
                               chartValuesOptions: ChartValuesOptions(

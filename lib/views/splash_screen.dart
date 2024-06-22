@@ -39,9 +39,10 @@ class _SplashScreenState extends State<SplashScreen> {
               // height: Get.height * 0.3,
               // width: Get.height * 0.3,
               // color: Colors.white,
-              child: Image(
-                image: AssetImage('assets/corona.webp'),
-                height: Get.height * 0.3,
+              child: Image.asset(
+                "assets/covid.jpg",
+                fit: BoxFit.cover,
+                height: 200,
               ),
             ),
             SizedBox(
