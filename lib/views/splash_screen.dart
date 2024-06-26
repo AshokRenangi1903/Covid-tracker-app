@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_covid_app/views/home.dart';
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 2), () {
+    Timer(Duration(seconds: 3), () {
       Get.to(() => Home());
       // Get.toEnd(() => Home());
     });
@@ -27,38 +28,33 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Align(
-        alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SizedBox(
-              height: Get.height * 0.2,
+      body: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          SizedBox(
+            height: Get.height * 0.2,
+          ),
+          Container(
+            child: Image.asset(
+              "assets/covid.jpg",
+              fit: BoxFit.cover,
+              height: Get.height,
             ),
-            Container(
-              // height: Get.height * 0.3,
-              // width: Get.height * 0.3,
-              // color: Colors.white,
-              child: Image.asset(
-                "assets/covid.jpg",
-                fit: BoxFit.cover,
-                height: 200,
-              ),
-            ),
-            SizedBox(
-              height: Get.height * 0.1,
-            ),
-            Center(
-                child: Text(
+          ),
+          Container(
+            // color: Colors.yellow,
+            margin: EdgeInsets.only(bottom: Get.height * 0.05),
+            child: Text(
               "COVID-19\nTracker App",
               style: TextStyle(
-                color: Colors.black,
+                color: Colors.white,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
-            )),
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }

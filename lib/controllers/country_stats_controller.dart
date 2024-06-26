@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter_covid_app/resources/app_urls.dart';
-import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 class CountryStatsController {
